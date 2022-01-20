@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Create Customer </h4>
+                </div>
+                <div class="card-body">
+                    <form action="" (ngSubmit)="submit()" [formGroup]="customer">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" class="form-control" formControlName="firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastname">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" formControlName="Email"> 
+                        </div>
+                        <div class="form-group">
+                            <label for="">Gender</label>
+                            <select name="name" class="form-control" formControlName="gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary form-control mt-3">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cust of Customer">
+            <td>{{cust.id}}</td>
+            <td>{{cust.firstname}}</td>
+            <td>{{cust.lastname}}</td>
+            <td>{{cust.Email}}</td>
+            <td>{{cust.gender}}</td>
+            <td>
+                <a href="" (click)="Edit(cust.id)"><i class="fa fa-edit"></i></a>
+                <a href="" (click)="deleteCustomer(cust.id)"><i class="fa fa-trash text-danger p-3"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+    </div>
+</div>

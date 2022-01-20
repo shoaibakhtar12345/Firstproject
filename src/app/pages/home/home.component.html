@@ -1,0 +1,5 @@
+<p>please Enter Message</p>
+<input type="text" [(ngModel)]="message">
+<hr>
+<p>Message Coming from Child: {{childmsg}}</p>
+<app-about [hello]="message" (parent)="data($event)"></app-about>
